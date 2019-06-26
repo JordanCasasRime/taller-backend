@@ -525,7 +525,7 @@ class Pago extends CI_Model
         $data = $query->result_array();
         $arreglo = [];
         
-        $query2 = $this->db->query("SELECT n_prioridad, sigla_programa from programa");
+        $query2 = $this->db->query("SELECT n_prioridad, sigla_programa from programa GROUP BY(n_prioridad) ORDER BY(n_prioridad)");
         $data2 = $query2->result_array();
         if($data2){
             foreach($data2 as $fila2){
